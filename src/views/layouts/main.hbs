@@ -4,29 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/mystyles.css">
     <title>Links App</title>
 </head>
 <body>
-    {{> navigation }}
 
-    {{#if success}}
-        <div class="container p-4">
-            <div class="row">
-                <div class="col-md-4 mx-auto">
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        {{success}}
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    {{/if}}
+    {{> navigation }}
+    
+    {{> message }}
 
     {{{ body }}}
 
+
+<script src="/bootstrap/js/jquery3.3.1.js"></script>   
 <script src="/bootstrap/js/bootstrap.js"></script>
-<script src="/bootstrap/js/jquery3.3.1.js"></script>    
 </body>
 </html>

@@ -24,6 +24,7 @@ router.get('/', async (req, res) => {
 router.get('/delete/:id', async (req, res) => {
     const { id } = req.params;
     await pool.query('delete from links where id = ?', [id]);
+    req.flash('success', 'Link removed successfully');
     res.redirect('/links');
 });
 
@@ -31,6 +32,7 @@ router.get('/edit/:id', async (req, res) => {
     const { id } = req.params;
     //links = vector de objetos
     const links = await pool.query('select * from links where id = ?', [id]);
+    req.flash('success', 'Link updated successfully');
     res.render('links/edit', {link: links[0]});
 });
 
